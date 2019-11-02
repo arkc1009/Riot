@@ -1,0 +1,28 @@
+{
+  "name": "riot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkc1009/Riot.git"
+  },
+  "author": "H",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arkc1009/Riot/issues"
+  },
+  "homepage": "https://github.com/arkc1009/Riot#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "asar": "^2.0.1",
+    "electron": "^7.0.1",
+    "electron-packager": "^14.1.0"
+  }
+}
