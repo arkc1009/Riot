@@ -1,5 +1,5 @@
 const {app, BrowserWindow, ipcMain, Menu} = require('electron');
-
+const LolAPI = require("./LolAPI.js");   
 const option = {
     width:1200,
     height:600,
@@ -11,7 +11,7 @@ const option = {
 };
 
 let win = null;
-
+let api = new LolAPI(); // 인스턴스 하나 생성.
 app.on("ready", ()=> {
     Menu.setApplicationMenu(null);
     win = new BrowserWindow(option);
@@ -23,5 +23,8 @@ ipcMain.on("openDev", ()=> {
 });
 
 ipcMain.on("summoner", (e, data)=> {
-    console.log(data);
+    api.loadSummoner(data.name).then(data=>{
+        e.reply("summonerData", data);
+    });
+    
 });
